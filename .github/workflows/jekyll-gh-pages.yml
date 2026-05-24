@@ -1,37 +1,66 @@
-name: Update Repo
+name: Deploy Repo with Packages
+
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'debs/**'
+    branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Generate Packages
+      - name: Setup Repo Tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y dpkg-dev bzip2
-          # الماكينة تقرأ الـ debs وتصنع الفهرس
+          sudo apt-get install -y dpkg-dev bzip2 gzip
+
+      - name: Generate Control Files (Packages, bz2, gz)
+        run: |
+          # 1. صنع ملف Packages من مجلد debs
           dpkg-scanpackages -m ./debs > Packages
-          # سطر ربط الأيقونات أوتوماتيكياً (بالرابط الصغير الجديد)
-          sed -i '/^Package: / { h; x; s/^Package: \(.*\)/Icon: https:\/\/r3d-030.github.io\/cokesniffer\/assets\/\1.png/; G }' Packages
-          bzip2 -f -k Packages
           
-      - name: Push changes
+          # 2. إضافة روابط الأيقونات أوتوماتيكياً (Pink/Blue Theme Link)
+          sed -i '/^Package: / { h; x; s/^Package: \(.*\)/Icon: https:\/\/r3d-030.github.io\/cokesniffer\/assets\/\1.png/; G }' Packages
+          
+          # 3. صنع نسخة bzip2
+          bzip2 -c Packages > Packages.bz2
+          
+          # 4. صنع نسخة gzip
+          gzip -c Packages > Packages.gz
+
+      - name: Push Generated Files back to Repo
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add Packages Packages.bz2
-          git commit -m "Update Repo Packages" || echo "No changes to commit"
-          git push
+          git add Packages Packages.bz2 Packages.gz
+          git commit -m "Update Packages (bz2/gz) [skip ci]" || echo "No changes to commit"
+          git push --force
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
