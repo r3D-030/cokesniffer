@@ -1,0 +1,8 @@
+Origin: Cokesniffer
+Label: Cokesniffer
+Suite: stable
+Version: 1.0
+Codename: Cokesniffer
+Architectures: iphoneos-arm iphoneos-arm64
+Components: main
+Description: My new personal tweaks repository
