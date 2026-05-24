@@ -1,3 +1,22 @@
+Icon: https://r3d-030.github.io/cokesniffer/assets/com.simplycode.PostBox.png
+Package: com.simplycode.PostBox
+Version: 0.8.1-4
+Architecture: iphoneos-arm64e
+Maintainer: PostBox Team <getpostboxapp@gmail.com>
+Filename: ./debs/PostBox-0.8.1.deb
+Size: 4089952
+MD5sum: 389b434ee2152a6fae52182a1b9b23f2
+SHA1: dcc845507acb8129a81bbe8139f4159e728655d5
+SHA256: a54eeda08184bc0c02b08ab414041030f1856c1353874b660f997bb33a40a1a8
+Section: Apps
+Homepage: https://postbox.news
+Description: News, package lists, and repo lists, all community centered.
+Author: PostBox Team <getpostboxapp@gmail.com>
+Depiction: https://postbox.news/depicts/app
+Icon: https://postbox.news/depicts/app/icon.png
+Name: PostBox
+Sileodepiction: https://postbox.news/depicts/app/fancydeps.json
+
 Icon: https://r3d-030.github.io/cokesniffer/assets/com.velen.privacy.png
 Package: com.velen.privacy
 Version: 1.0.0-7+debug
