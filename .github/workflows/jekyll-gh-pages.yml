@@ -22,8 +22,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y dpkg-dev bzip2
-          # الماكينة توه باش تقرأ ملفات الـ deb وتطلع الاسامي وحدها
+          # الماكينة تقرأ الـ debs وتصنع الفهرس
           dpkg-scanpackages -m ./debs > Packages
+          # سطر ربط الأيقونات أوتوماتيكياً (بالرابط الصغير الجديد)
+          sed -i '/^Package: / { h; x; s/^Package: \(.*\)/Icon: https:\/\/r3d-030.github.io\/cokesniffer\/assets\/\1.png/; G }' Packages
           bzip2 -f -k Packages
           
       - name: Push changes
