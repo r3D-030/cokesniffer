@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cokesniffer Repo</title>
+    <style>
+        :root {
+            --neon-color: #00f2ff; /* لون الـ Glow */
+            --bg-color: #0a0a0a;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* تأثير الـ Neon Glow للخلفية */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--neon-color);
+            filter: blur(150px);
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--neon-color), 0 0 20px var(--neon-color);
+        }
+
+        p {
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            padding: 15px 30px;
+            border: 1px solid var(--neon-color);
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: var(--neon-color);
+            color: black;
+            box-shadow: 0 0 30px var(--neon-color);
+        }
+
+        .sileo { --neon-color: #58b6f5; }
+        .zebra { --neon-color: #edca5f; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cokesniffer</h1>
+        <p>Hello! Welcome to your futuristic tweak hub.</p>
+        
+        <div class="btn-group">
+            <a href="sileo://source/https://r3d-030.github.io/cokesniffer/" class="btn sileo">Add to Sileo</a>
+            <a href="zbra://sources/add/https://r3d-030.github.io/cokesniffer/" class="btn zebra">Add to Zebra</a>
+        </div>
+    </div>
+
+</body>
+</html>
