@@ -68,3 +68,22 @@ Description: Process Viewer for iOS GUI, updated for iOS 13 by SXX.
 Author: Domo, SXX
 Name: CocoaTop
 
+Icon: https://r3d-030.github.io/cokesniffer/assets/xyz.cypwn.lynxtwo.png
+Package: xyz.cypwn.lynxtwo
+Version: 2.4.6
+Architecture: iphoneos-arm64
+Maintainer: CyPwn
+Depends: mobilesubstrate, firmware (>= 14.0), preferenceloader, ws.hbang.common
+Conflicts: com.mtac.lynxtwo
+Filename: ./debs/Lynx2.deb
+Size: 734896
+MD5sum: e256ae70932e1b156cb20020ec7ee24c
+SHA1: 7f37cdc57e60cfd36fc9425a1c7c5f0ae8ff4356
+SHA256: 57d0dbb3f9f9f9d70b987d246114a1f23387848227a8a85873881ff311b7d26c
+Section: Tweaks
+Description: Ultimate Device Customization for iOS 14, 15 & 16.
+Author: MTAC
+Depiction: https://repo.cypwn.xyz/depiction/1785
+Name: Lynx 2(rootless)
+Sileodepiction: https://repo.cypwn.xyz/sileo_depiction/1785
+
