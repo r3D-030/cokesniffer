@@ -6,8 +6,10 @@
     <title>Cokesniffer Repo</title>
     <style>
         :root {
-            --neon-color: #00f2ff; /* لون الـ Glow */
-            --bg-color: #0a0a0a;
+            /* الألوان المطلوبة */
+            --pink-glow: #ff007f;
+            --blue-glow: #00d4ff;
+            --bg-color: #050505;
         }
 
         body {
@@ -23,74 +25,113 @@
             overflow: hidden;
         }
 
-        /* تأثير الـ Neon Glow للخلفية */
+        /* أنيميشن للخلفية المتوهجة */
         body::before {
             content: "";
             position: absolute;
-            width: 300px;
-            height: 300px;
-            background: var(--neon-color);
-            filter: blur(150px);
-            opacity: 0.2;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, var(--pink-glow), var(--blue-glow));
+            filter: blur(120px);
+            opacity: 0.15;
             z-index: -1;
+            animation: pulseBg 6s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulseBg {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.1; }
+            100% { transform: scale(1.3) translate(20px, -20px); opacity: 0.2; }
         }
 
         .container {
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 60px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            /* وهج حول الحاوية يجمع بين اللونين */
+            box-shadow: 0 0 40px rgba(255, 0, 127, 0.1), 0 0 40px rgba(0, 212, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 50px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px var(--neon-color), 0 0 20px var(--neon-color);
+            letter-spacing: 8px;
+            margin-bottom: 15px;
+            /* تأثير الـ Gradient Glow على النص */
+            background: linear-gradient(to right, var(--pink-glow), var(--blue-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 127, 0.5));
+            animation: textGlow 3s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { filter: drop-shadow(0 0 5px var(--pink-glow)); }
+            100% { filter: drop-shadow(0 0 15px var(--blue-glow)); }
         }
 
         p {
-            color: #888;
-            margin-bottom: 30px;
+            color: #aaa;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
 
         .btn-group {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .btn {
             text-decoration: none;
             color: white;
-            padding: 15px 30px;
-            border: 1px solid var(--neon-color);
-            border-radius: 50px;
+            padding: 18px 40px;
+            border-radius: 15px;
             font-weight: bold;
-            transition: 0.3s;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-transform: uppercase;
             font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        .btn:hover {
-            background: var(--neon-color);
+        /* زر Sileo بلون وردي */
+        .sileo { 
+            border-color: var(--pink-glow);
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+        }
+        .sileo:hover {
+            background: var(--pink-glow);
+            box-shadow: 0 0 30px var(--pink-glow);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        /* زر Zebra بلون أزرق فاتح */
+        .zebra { 
+            border-color: var(--blue-glow);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+        }
+        .zebra:hover {
+            background: var(--blue-glow);
+            box-shadow: 0 0 30px var(--blue-glow);
+            transform: translateY(-3px);
             color: black;
-            box-shadow: 0 0 30px var(--neon-color);
         }
 
-        .sileo { --neon-color: #58b6f5; }
-        .zebra { --neon-color: #edca5f; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Cokesniffer</h1>
-        <p>Hello! Welcome to your futuristic tweak hub.</p>
+        <p>Your futuristic tweak repository</p>
         
         <div class="btn-group">
             <a href="sileo://source/https://r3d-030.github.io/cokesniffer/" class="btn sileo">Add to Sileo</a>
