@@ -6,4 +6,4 @@ Codename: cokesniffer
 Architectures: iphoneos-arm64
 Components: main
 Description: My repo
-Icon: https://r3d-030.github.io/cokesniffer/sileoicon.png
+Icon: file://RepoIcon.png
