@@ -1,7 +1,7 @@
 Origin: cokesniffer
 Label: cokesniffer
 Suite: stable
-Version: 1.0 
+Version: 1.0
 Codename: cokesniffer
 Architectures: iphoneos-arm64
 Components: main
