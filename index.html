@@ -1,143 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cokesniffer Repo</title>
-    <style>
-        :root {
-            /* الألوان المطلوبة */
-            --pink-glow: #ff007f;
-            --blue-glow: #00d4ff;
-            --bg-color: #050505;
-        }
+خذ الملف! إليك ما عملته:
 
-        body {
-            background-color: var(--bg-color);
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
+**شخصية الأنيم 🎌**
+شخصية أنيم futuristic مرسومة بـ SVG كاملة — شعر سيبر أزرق/بنفسجي، عيون متوهجة بـ gradient، درع صدر بـ orb متحرك، معطف طويل بنقوش circuit، أساور تكنولوجية وطيف ضوء حولها
 
-        /* أنيميشن للخلفية المتوهجة */
-        body::before {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(45deg, var(--pink-glow), var(--blue-glow));
-            filter: blur(120px);
-            opacity: 0.15;
-            z-index: -1;
-            animation: pulseBg 6s infinite alternate ease-in-out;
-        }
+**الأنيميشن ⚡**
+- شخصية تطفو أعلى وأسفل باستمرار
+- تتحرك مع الماوس (parallax effect)
+- عيون وأضواء الشخصية تنبض
+- جسيمات طائرة حول الشخصية
+- خط ماسح يجري على كامل الشاشة
+- glitch effect على عنوان COKESNIFFER
+- shimmer gradient يجري على النص
 
-        @keyframes pulseBg {
-            0% { transform: scale(1) translate(0, 0); opacity: 0.1; }
-            100% { transform: scale(1.3) translate(20px, -20px); opacity: 0.2; }
-        }
-
-        .container {
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 60px;
-            border-radius: 30px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(15px);
-            /* وهج حول الحاوية يجمع بين اللونين */
-            box-shadow: 0 0 40px rgba(255, 0, 127, 0.1), 0 0 40px rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            margin-bottom: 15px;
-            /* تأثير الـ Gradient Glow على النص */
-            background: linear-gradient(to right, var(--pink-glow), var(--blue-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(255, 0, 127, 0.5));
-            animation: textGlow 3s infinite alternate;
-        }
-
-        @keyframes textGlow {
-            0% { filter: drop-shadow(0 0 5px var(--pink-glow)); }
-            100% { filter: drop-shadow(0 0 15px var(--blue-glow)); }
-        }
-
-        p {
-            color: #aaa;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .btn {
-            text-decoration: none;
-            color: white;
-            padding: 18px 40px;
-            border-radius: 15px;
-            font-weight: bold;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        /* زر Sileo بلون وردي */
-        .sileo { 
-            border-color: var(--pink-glow);
-            box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
-        }
-        .sileo:hover {
-            background: var(--pink-glow);
-            box-shadow: 0 0 30px var(--pink-glow);
-            transform: translateY(-3px);
-            color: white;
-        }
-
-        /* زر Zebra بلون أزرق فاتح */
-        .zebra { 
-            border-color: var(--blue-glow);
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
-        }
-        .zebra:hover {
-            background: var(--blue-glow);
-            box-shadow: 0 0 30px var(--blue-glow);
-            transform: translateY(-3px);
-            color: black;
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h1>Cokesniffer</h1>
-        <p>Your futuristic tweak repository</p>
-        
-        <div class="btn-group">
-            <a href="sileo://source/https://r3d-030.github.io/cokesniffer/" class="btn sileo">Add to Sileo</a>
-            <a href="zbra://sources/add/https://r3d-030.github.io/cokesniffer/" class="btn zebra">Add to Zebra</a>
-        </div>
-    </div>
-
-</body>
-</html>
+**التصميم 🚀**
+- HUD نصوص في الزوايا مثل شاشة sci-fi
+- شبكة grid متحركة في الخلفية
+- عداد للتويكس والتحميلات يعد من الصفر
+- بطاقة بزوايا miter مضيئة
+- أزرار بتأثير glow عند hover
+- كل شيء full screen بدون margins
