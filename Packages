@@ -17,6 +17,23 @@ Icon: https://postbox.news/depicts/app/icon.png
 Name: PostBox
 Sileodepiction: https://postbox.news/depicts/app/fancydeps.json
 
+Icon: https://r3d-030.github.io/cokesniffer/assets/com.velen.mdmprivacy.png
+Package: com.velen.mdmprivacy
+Version: 1.0.0-1+debug
+Architecture: iphoneos-arm64
+Maintainer: velen
+Installed-Size: 72
+Depends: mobilesubstrate | substitute | libhooker
+Filename: ./debs/com.velen.mdmprivacy_1.0.0-1+debug_iphoneos-arm64.deb
+Size: 4520
+MD5sum: 1c53d7ab3d75b8793951cda0644617df
+SHA1: 9199d33b0b0ec5ba60272e03564298b58f35b175
+SHA256: b36b94de2910149bd63318d699788f4a48185a53845bd9285be7de51abb32d11
+Section: Tweaks
+Description: Protects UDID and device identifiers from MDM and lockdownd
+Author: velen
+Name: MDM Privacy
+
 Icon: https://r3d-030.github.io/cokesniffer/assets/com.velen.privacy.png
 Package: com.velen.privacy
 Version: 1.0.0-7+debug
