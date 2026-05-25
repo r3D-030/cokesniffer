@@ -1,7 +1,7 @@
 {
   "class": "FeaturedBannersView",
   "itemSize": "{380, 180}",
-  "itemCornerRadius": 10,
+  "itemCornerRadius": 8,
   "banners": [
     {
         "url": "https://r3d-030.github.io/cokesniffer/",
