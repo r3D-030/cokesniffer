@@ -1,3 +1,20 @@
+Icon: https://r3d-030.github.io/cokesniffer/assets/com.velen.privacy.png
+Package: com.velen.privacy
+Version: 1.0.0-8+debug
+Architecture: iphoneos-arm64
+Maintainer: Velen
+Installed-Size: 188
+Depends: mobilesubstrate | ellekit, preferenceloader
+Filename: ./debs/com.velen.privacy_1.0.0-8+debug_iphoneos-arm64.deb
+Size: 17992
+MD5sum: 5b5abd853de0cf54ade3dd89a621e55e
+SHA1: f887168abb50e5dca64a1c2a15189643202a182f
+SHA256: 667144e133cbf8b2631bffa831bc3a6548b91eda601befbd9d03b85061fd7a16
+Section: Tweaks
+Description: Advanced Privacy Suite — UDID, IMEI & Serial Protection
+Author: Velen
+Name: Velen Privacy
+
 Icon: https://r3d-030.github.io/cokesniffer/assets/xyz.cypwn.lynxtwo.png
 Package: xyz.cypwn.lynxtwo
 Version: 2.4.6
