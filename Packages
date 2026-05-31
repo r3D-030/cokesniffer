@@ -1,3 +1,22 @@
+Icon: https://r3d-030.github.io/cokesniffer/assets/com.sparklechan.swifty.png
+Package: com.sparklechan.swifty
+Version: 1.6
+Architecture: iphoneos-arm64
+Maintainer: FCCT
+Depends: swift, clang, ldid
+Conflicts: com.sparklechan.sparkkit
+Filename: ./debs/FridaCodeManager-rootless.deb
+Size: 3166104
+MD5sum: fa78a115bee9f496cfd7673b73a8fd56
+SHA1: 11798cd98515e75cbbd15635f623a257abb7c4c7
+SHA256: 7de46e43a9e0f91ef7e3e5af3c928b6e9320696c13fa8c2813fe531e68d8c512
+Section: Utilities
+Description: Full fledged Xcode-like IDE for iOS
+Tag: role::hacker
+Author: FCCT
+Icon: https://raw.githubusercontent.com/fridakitten/FridaCodeManager/main/Blueprint/FridaCodeManager.app/AppIcon.png
+Name: FridaCodeManager
+
 Icon: https://r3d-030.github.io/cokesniffer/assets/com.velen.privacy.png
 Package: com.velen.privacy
 Version: 1.0.0-8+debug
